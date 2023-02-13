@@ -10,7 +10,7 @@ const instance = axios.create({
   },
 });
 
-export const fetchData = async (q, page = 1) => {
+export const fetchDataa = async (q, page = 1) => {
   const { data } = await instance.get('/', {
     params: {
       q,
