@@ -26,7 +26,7 @@ const SearchImages = () => {
       try {
         setLoading(true);
 
-        const { hits, totalHits } = await fetchData(search, page);
+        const { hits, totalHits } = await fetchDataa(search, page);
         if (hits.length === 0) {
           toast.error('No result found!');
         }
