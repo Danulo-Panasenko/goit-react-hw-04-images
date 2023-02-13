@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import styles from './SearchImages.module.css';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
-import { fetchImages } from 'shared/services/posts-api';
+
 import Button from 'shared/components/Button/Button';
 import Loader from 'shared/components/Loader/Loader';
 import { toast } from 'react-toastify';
@@ -39,7 +39,7 @@ const SearchImages = () => {
       }
     };
     fetchImages();
-  }, [search, page, setLoading, setItems, setTotal, setError, setLoading]);
+  }, [search, page]);
 
   const searchImages = useCallback(({ search }) => {
     setSearch(search);
