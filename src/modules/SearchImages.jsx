@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import styles from './SearchImages.module.css';
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
-
+import { fetchData } from 'shared/services/posts-api';
 import Button from 'shared/components/Button/Button';
 import Loader from 'shared/components/Loader/Loader';
 import { toast } from 'react-toastify';
@@ -26,7 +26,7 @@ const SearchImages = () => {
       try {
         setLoading(true);
 
-        const { hits, totalHits } = await fetchImages(search, page);
+        const { hits, totalHits } = await fetchData(search, page);
         if (hits.length === 0) {
           toast.error('No result found!');
         }
